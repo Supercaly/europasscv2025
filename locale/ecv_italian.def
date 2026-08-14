@@ -36,3 +36,14 @@
 \def\ecv@label@spokeninteraction{Interazione orale}
 \def\ecv@label@cefrlevels{Livelli: A1 e A2: Livello elementare B1 e B2: Livello intermedio C1 e C2: Livello avanzato}
 \def\ecv@label@drivinglicence{Patente di guida}
+% Section titles
+\def\ecv@label@sec@education{Istruzione e formazione}
+\def\ecv@label@sec@work{Esperienza lavorativa}
+\def\ecv@label@sec@languages{Competenze linguistiche}
+\def\ecv@label@sec@skills{Competenze}
+\def\ecv@label@sec@conferences{Conferenze/seminari}
+\def\ecv@label@sec@projects{Progetti}
+\def\ecv@label@sec@awards{Onoreficenze e riconoscimenti}
+\def\ecv@label@sec@drivinglicence{Patente di guida}
+\def\ecv@label@sec@publications{Pubblicazioni}
+\def\ecv@label@sec@certifications{Certificazioni}
