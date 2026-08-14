@@ -149,7 +149,7 @@
 % LOAD COLORS SCHEMES
 % ============================================================
 \InputIfFileExists{colors/ecv_\ecv@colorscheme.def}{}{%
-    \PackageWarning{europasscv2025}{Color file 'ecv_\ecv@color.def' not found, falling back to default}%
+    \PackageWarning{europasscv2025}{Color file 'ecv_\ecv@colorscheme.def' not found, falling back to default}%
     \input{colors/ecv_default.def}%
 }
 
@@ -515,6 +515,8 @@
     \renewcommand{\ecv@info@emaillist}{}
     \renewcommand{\ecv@info@websitelist}{}
     \renewcommand{\ecv@info@sociallist}{}
+    \renewcommand{\ecv@info@imlist}{}
+    \renewcommand{\ecv@personalinfolist}{}
 }{%
     % Make list with personal info
     \ecv@makepersonalinfolist%
@@ -644,6 +646,7 @@
     % Reset language lists
     \renewcommand{\ecv@mtlist}{}%
     \renewcommand{\ecv@langrows}{}%
+    \ecv@cefrlevelsfalse%
 }{%
     % ==== Mother Tongues ====
     \par\vspace{6pt}

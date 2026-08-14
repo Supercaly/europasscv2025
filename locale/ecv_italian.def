@@ -19,7 +19,7 @@
 %
 \def\ecv@label@dob{Data di nascita}
 \def\ecv@label@gender{Sesso}
-\def\ecv@label@nationality{Nationalit\`a}
+\def\ecv@label@nationality{Nazionalit\`a}
 \def\ecv@label@phone{Telefono}
 \def\ecv@label@email{Indirizzo e-mail}
 \def\ecv@label@website{Sito internet}
@@ -34,5 +34,5 @@
 \def\ecv@label@reading{Lettura}
 \def\ecv@label@spokenproduction{Produzione orale}
 \def\ecv@label@spokeninteraction{Interazione orale}
-\def\ecv@label@cefrlevels{Levelli: A1 e A2: Livello elementare B1 e B2: Livello intermedio C1 e C2: Livello avanzato}
+\def\ecv@label@cefrlevels{Livelli: A1 e A2: Livello elementare B1 e B2: Livello intermedio C1 e C2: Livello avanzato}
 \def\ecv@label@drivinglicence{Patente di guida}
