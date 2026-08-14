@@ -72,6 +72,7 @@
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
 \RequirePackage{geometry}
+\RequirePackage{setspace}
 \RequirePackage{fancyhdr}
 \RequirePackage{lastpage}
 \RequirePackage{tikz}
@@ -108,8 +109,8 @@
 \else
     % XeLaTex and LuaLaTex
     \RequirePackage{fontspec}
-    \setmainfont{Helvetica}
-    \setsansfont{Helvetica}
+    \setmainfont{FreeSans}
+    \setsansfont{FreeSans}
     \renewcommand{\familydefault}{\sfdefault}
 \fi
 
@@ -212,7 +213,7 @@
 % USER PHOTO
 % ============================================================
 \newlength{\ecv@photosize}
-\setlength{\ecv@photosize}{3.5cm} 
+\setlength{\ecv@photosize}{3cm} 
 
 \newif\ifecv@photo\ecv@photofalse
 \newcommand{\ecv@photo}{}
@@ -300,16 +301,17 @@
     % Create list of personal info displayed in the header
     %
     % Date of birth
+    \onehalfspacing
     \ifdefempty{\ecv@info@dob}{}{%
-        \ecv@personalinfolist@append{\ecv@label@dob:~\ecv@info@dob}%
+        \ecv@personalinfolist@append{{\bf\ecv@label@dob:}~\ecv@info@dob}%
     }%
     % Gender
     \ifdefempty{\ecv@info@gender}{}{%
-        \ecv@personalinfolist@append{\ecv@label@gender:~\ecv@info@gender}%
+        \ecv@personalinfolist@append{{\bf\ecv@label@gender:}~\ecv@info@gender}%
     }%
     % Nationalities
     \ifdefempty{\ecv@info@nationalitylist}{}{%
-        \ecv@personalinfolist@append{\ecv@label@nationality:~\ecv@info@nationalitylist}%
+        \ecv@personalinfolist@append{{\bf\ecv@label@nationality:}~\ecv@info@nationalitylist}%
     }%
     % Phone numbers
     \ifdefempty{\ecv@info@phonelist}{}{%
@@ -339,14 +341,16 @@
 \newcommand{\ecv@personalinfo@content}{%
     % Name
     \ifdefempty{\ecv@info@name}{}{%
-        {%
-            \color{ecv@color@title}%
-            \LARGE\textbf{\ecv@info@name}\par\vspace{8pt}%
-        }\normalcolor%
-    }%
-    {%
-        \color{ecv@color@info}%
-        \ecv@personalinfolist%
+    	{%
+    		\color{ecv@color@title}%
+    		\LARGE\textbf{\ecv@info@name}\par\vspace{8pt}%
+    	}%
+    	\color{ecv@color@title}\rule[5mm]{\textwidth}{.5mm}\\
+    	\normalcolor%
+    	}%
+    	{%
+    		\color{ecv@color@info}%
+    		\ecv@personalinfolist%
     }\normalcolor%
 }
 
