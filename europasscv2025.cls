@@ -48,6 +48,7 @@
 \newcommand{\ecv@lang}{english}% Default to english
 \DeclareOption{english}{\renewcommand{\ecv@lang}{english}}
 \DeclareOption{german}{\renewcommand{\ecv@lang}{german}}
+\DeclareOption{hungarian}{\renewcommand{\ecv@lang}{hungarian}}
 \DeclareOption{italian}{\renewcommand{\ecv@lang}{italian}}
 \DeclareOption{romanian}{\renewcommand{\ecv@lang}{romanian}}
 
