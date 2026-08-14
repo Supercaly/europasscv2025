@@ -545,6 +545,18 @@
     \ignorespaces%
 }
 
+% Localized shortcuts for standard Europass section titles
+\newcommand{\ecvsectioneducation}{\ecvsection{\ecv@label@sec@education}}
+\newcommand{\ecvsectionwork}{\ecvsection{\ecv@label@sec@work}}
+\newcommand{\ecvsectionlanguages}{\ecvsection{\ecv@label@sec@languages}}
+\newcommand{\ecvsectionskills}{\ecvsection{\ecv@label@sec@skills}}
+\newcommand{\ecvsectionconferences}{\ecvsection{\ecv@label@sec@conferences}}
+\newcommand{\ecvsectionprojects}{\ecvsection{\ecv@label@sec@projects}}
+\newcommand{\ecvsectionawards}{\ecvsection{\ecv@label@sec@awards}}
+\newcommand{\ecvsectiondrivinglicence}{\ecvsection{\ecv@label@sec@drivinglicence}}
+\newcommand{\ecvsectionpublications}{\ecvsection{\ecv@label@sec@publications}}
+\newcommand{\ecvsectioncertifications}{\ecvsection{\ecv@label@sec@certifications}}
+
 % ============================================================
 % SECTION ENTRY
 % ============================================================

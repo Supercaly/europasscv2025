@@ -1,10 +1,19 @@
 % ecv_romanian.def
 % Romanian language definition for europasscv2025
 %
-% Based on ecv_english.def / ecv_italian.def from the europasscv2025 package.
+% Copyright 2025 Enyedi Szilárd
+%
 % This work may be distributed and/or modified under the conditions of
 % the LaTeX Project Public License, either version 1.3 of this license
 % or (at your option) any later version.
+% The latest version of this license is in
+%   https://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2008 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Enyedi Szilárd.
 %
 \ProvidesFile{ecv_romanian.def}[2026-06-29 europasscv2025 Romanian language definition]
 %
@@ -27,3 +36,14 @@
 \def\ecv@label@spokeninteraction{Conversație}
 \def\ecv@label@cefrlevels{Niveluri: A1 și A2: Utilizator de bază - B1 și B2: Utilizator independent - C1 și C2: Utilizator experimentat}
 \def\ecv@label@drivinglicence{Permis de conducere}
+% Section titles
+\def\ecv@label@sec@education{Educație și formare}
+\def\ecv@label@sec@work{Experiență profesională}
+\def\ecv@label@sec@languages{Competențe lingvistice}
+\def\ecv@label@sec@skills{Competențe}
+\def\ecv@label@sec@conferences{Conferințe și seminare}
+\def\ecv@label@sec@projects{Proiecte}
+\def\ecv@label@sec@awards{Distincții onorifice și premii}
+\def\ecv@label@sec@drivinglicence{Permis de conducere}
+\def\ecv@label@sec@publications{Publicații}
+\def\ecv@label@sec@certifications{Certificări}

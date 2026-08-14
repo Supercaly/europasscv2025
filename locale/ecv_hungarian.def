@@ -33,3 +33,14 @@
 \def\ecv@label@spokeninteraction{Társalgás}
 \def\ecv@label@cefrlevels{Szintek: A1 és A2: Alapszintű felhasználó; B1 és B2: Önálló felhasználó; C1 és C2: Mesterfokú felhasználó}
 \def\ecv@label@drivinglicence{Vezetői engedély}
+% Section titles
+\def\ecv@label@sec@education{Oktatás és képzés}
+\def\ecv@label@sec@work{Szakmai tapasztalat}
+\def\ecv@label@sec@languages{Nyelvismeret}
+\def\ecv@label@sec@skills{Készségek}
+\def\ecv@label@sec@conferences{Konferenciák és szemináriumok}
+\def\ecv@label@sec@projects{Projektek}
+\def\ecv@label@sec@awards{Kitüntetések és elismerések}
+\def\ecv@label@sec@drivinglicence{Vezetői engedély}
+\def\ecv@label@sec@publications{Publikációk}
+\def\ecv@label@sec@certifications{Tanúsítványok}

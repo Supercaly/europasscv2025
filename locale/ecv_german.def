@@ -36,3 +36,14 @@
 \def\ecv@label@spokeninteraction{An Gesprächen teilnehmen}
 \def\ecv@label@cefrlevels{Niveau: A1 und A2: Elementare Sprachanwendung - B1 und B2: Selbstständige Sprachanwendung - C1 und C2: Kompetente Sprachanwendung}
 \def\ecv@label@drivinglicence{Führerschein}
+% Section titles
+\def\ecv@label@sec@education{Allgemeine und berufliche Bildung}
+\def\ecv@label@sec@work{Berufserfahrung}
+\def\ecv@label@sec@languages{Sprachkenntnisse}
+\def\ecv@label@sec@skills{Kompetenzen}
+\def\ecv@label@sec@conferences{Konferenzen und Seminare}
+\def\ecv@label@sec@projects{Projekte}
+\def\ecv@label@sec@awards{Auszeichnungen und Preise}
+\def\ecv@label@sec@drivinglicence{Führerschein}
+\def\ecv@label@sec@publications{Publikationen}
+\def\ecv@label@sec@certifications{Zertifizierungen}

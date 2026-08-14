@@ -36,3 +36,14 @@
 \def\ecv@label@spokeninteraction{Spoken interaction}
 \def\ecv@label@cefrlevels{Levels: A1 and A2: Basic user - B1 and B2: Independent user - C1 and C2: Proficient user}
 \def\ecv@label@drivinglicence{Driving licence}
+% Section titles
+\def\ecv@label@sec@education{Education \& Training}
+\def\ecv@label@sec@work{Work Experience}
+\def\ecv@label@sec@languages{Language Skills}
+\def\ecv@label@sec@skills{Skills}
+\def\ecv@label@sec@conferences{Conferences \& Seminars}
+\def\ecv@label@sec@projects{Projects}
+\def\ecv@label@sec@awards{Honours and Awards}
+\def\ecv@label@sec@drivinglicence{Driving Licence}
+\def\ecv@label@sec@publications{Publications}
+\def\ecv@label@sec@certifications{Certifications}
