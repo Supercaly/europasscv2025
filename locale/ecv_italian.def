@@ -17,6 +17,7 @@
 %
 \ProvidesFile{ecv_italian.def}[2026-05-20 europasscv2025 Italian language definition]
 %
+\def\ecv@label@page{Pagina}
 \def\ecv@label@dob{Data di nascita}
 \def\ecv@label@gender{Sesso}
 \def\ecv@label@nationality{Nazionalit\`a}

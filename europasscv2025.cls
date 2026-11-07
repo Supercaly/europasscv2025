@@ -183,7 +183,7 @@
         \ifecv@nototpages\else%
             {%
                 \color{ecv@color@text}%
-                Page~\thepage/\pageref*{LastPage}%
+                \ecv@label@page~\thepage/\pageref*{LastPage}%
             }
             \normalcolor
         \fi%
