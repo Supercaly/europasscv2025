@@ -8,6 +8,7 @@
 %
 \ProvidesFile{ecv_romanian.def}[2026-06-29 europasscv2025 Romanian language definition]
 %
+\def\ecv@label@page{Pagină}
 \def\ecv@label@dob{Data nașterii}
 \def\ecv@label@gender{Gen}
 \def\ecv@label@nationality{Cetățenie}

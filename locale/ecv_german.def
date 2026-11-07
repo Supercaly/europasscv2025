@@ -17,6 +17,7 @@
 %
 \ProvidesFile{ecv_german.def}[2026-07-14 europasscv2025 German language definition]
 %
+\def\ecv@label@page{Seite}
 \def\ecv@label@dob{Geburtsdatum}
 \def\ecv@label@gender{Geschlecht}
 \def\ecv@label@nationality{Staatsbürgerschaft}
