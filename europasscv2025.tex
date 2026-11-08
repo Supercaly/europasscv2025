@@ -38,8 +38,9 @@
 \newcommand{\pkg}[1]{\textsf{#1}}
 
 \title{
-    Documentation of the \LaTeX\ class\\
-    \Large\textbf{\texttt{europasscv2025.cls}}\\
+    Documentation of the \LaTeX\ classes\\
+    \Large\textbf{\texttt{europasscv2025.cls} and}\\
+    \Large\textbf{\texttt{europassletter2025.cls}}\\
     \normalsize{\href{https://github.com/Supercaly/europasscv2025}{\texttt{https://github.com/Supercaly/europasscv2025}}}\\
     \vspace{0.2cm}\normalsize Version 0.1 2026-05-20
 }
@@ -58,6 +59,7 @@ typesetting a curriculum vit\ae following the Europass format as defined by the 
 Commission. In particular, it implements the \emph{classic} template of
 the 2025 version of the Europass CV, as available on the official Europass
 online editor (\url{https://europa.eu/europass}) at the time of writing.
+The package also provides \pkg{europassletter2025} for matching cover letters.
 \end{abstract}
 
 \tableofcontents
@@ -118,18 +120,10 @@ trademarks of the European Union.
 \section{Requirements and compilation}
 % ============================================================
 
-\pkg{europasscv2025} requires a reasonably up-to-date \LaTeX\ distribution
-(TeX Live 2022 or later is recommended). It depends on the following
-packages: \pkg{xcolor}, \pkg{graphicx}, \pkg{geometry}, \pkg{fancyhdr},
-\pkg{lastpage}, \pkg{tikz}, \pkg{array}, \pkg{tabularx}, \pkg{booktabs},
-\pkg{colortbl}, \pkg{longtable}, \pkg{microtype}, \pkg{pgfkeys},
-\pkg{ulem}, \pkg{tcolorbox}, \pkg{etoolbox}, \pkg{ragged2e}, and
-\pkg{hyperref}. All of these are included in standard \LaTeX\ distributions.
-
-The class supports pdf\LaTeX, \XeLaTeX, and \LuaLaTeX, and automatically
-adapts the font setup to the detected engine. \XeLaTeX\ or \LuaLaTeX\ are
-recommended for best font rendering and full Unicode support; pdf\LaTeX\
-is supported but may produce slightly different font rendering.
+Both classes require a reasonably up-to-date \LaTeX\ distribution
+(TeX Live 2022 or later is recommended). They support pdf\LaTeX, \XeLaTeX,
+and \LuaLaTeX. \XeLaTeX\ or \LuaLaTeX\ are recommended for full Unicode
+support.
 
 The recommended way to compile the document is via the provided
 \texttt{Makefile}, which handles all compilation steps automatically,
@@ -479,6 +473,55 @@ The predefined color schemes are:
     \bottomrule
 \end{tabular}
 \end{center}
+
+% ------------------------------------------------------------
+\subsection{Cover letters}
+\label{sec:coverletters}
+% ------------------------------------------------------------
+
+The \pkg{europassletter2025} class creates an A4 cover letter with sender and
+recipient details, a subject, body text and closing. It shares the CV class's
+seven color schemes and language options:
+
+\begin{verbatim}
+\documentclass[english,color-darkgreen]{europassletter2025}
+\eclname{Katie Smith}
+\ecladdress{12 Strawberry Hill, Dublin 8}
+\eclemail{smith@example.com}
+\eclphone[mobile]{(+353) 555 123 555}
+\eclim[\faWhatsapp]{WhatsApp}{ksmith}
+
+\eclrecipientname{Selection Committee}
+\eclrecipientorganization{Example Company}
+\eclrecipientaddress{1 Example Street, Dublin}
+\ecldate{Dublin, 8 November 2026}
+\eclsubject{Application for Software Engineer}
+\eclopening{Dear Selection Committee,}
+\eclclosing{Yours sincerely,}
+\eclsignature{Katie Smith}
+
+\begin{document}
+\begin{eclletter}
+I am writing to apply for the advertised position.
+\end{eclletter}
+\end{document}
+\end{verbatim}
+
+Sender commands include \cmd{eclname}, \cmd{ecladdress}, \cmd{eclemail},
+\cmd{eclphone[type]} and \cmd{eclim[icon]\{platform\}\{handle\}}. The
+optional first argument to \cmd{eclim} selects a custom icon, as shown in the
+example. Phone types are \opt{home}, \opt{mobile} (the default), \opt{work}
+and \opt{other}. Recipient and letter details are set with
+\cmd{eclrecipientname}, \cmd{eclrecipientorganization},
+\cmd{eclrecipientaddress}, \cmd{ecldate}, \cmd{eclsubject},
+\cmd{eclopening}, \cmd{eclclosing} and \cmd{eclsignature}. An optional
+signature image can be added with \cmd{eclsignatureimage[height]\{filename\}};
+its default height is 25\,mm.
+
+The color setters described in section~\ref{sec:colors} also apply to letters:
+the accent colors the page bands, the text color applies to body text, the
+highlight colors the sender name, the section color applies to headings and
+contact icons, and the link color applies to the email address.
 
 % ------------------------------------------------------------
 \subsection{Bibliography and publications}
