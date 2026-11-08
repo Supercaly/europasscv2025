@@ -1,6 +1,6 @@
 # europasscv2025
 
-**Unofficial LaTeX class for the 2025 Europass CV ('classic' template)**
+**Unofficial LaTeX classes for the 2025 Europass CV and cover letter**
 
 ## Overview
 
@@ -21,6 +21,8 @@ templates, but no LaTeX implementation existed for any of the post-2020 layouts.
 `europasscv2025` fills this gap by implementing the **classic** template of the
 2025 Europass CV editor, as available on the
 [official Europass website](https://europa.eu/europass) at the time of writing.
+The package also provides `europassletter2025`, a companion class for matching
+cover letters.
 
 This class is inspired by [europasscv](https://ctan.org/pkg/europasscv) by
 Giacomo Mazzamuto, which remains the reference implementation for the 2013
@@ -30,15 +32,17 @@ layout. However, `europasscv2025` is an entirely independent reimplementation:
 
 ## Features
 
-At the moment, the `europasscv2025` class implements only the *"classic"* Europass theme. Some features available are:
+The `europasscv2025` class implements the *"classic"* Europass CV theme. The
+package also includes a matching cover-letter class. Features include:
 
 - Full-width colored header with personal information and optional circular profile picture
+- A4 cover letter with sender and recipient details, contact icons and optional signature image
 - Seven predefined color schemes: `default`, `darkblue`, `blue`, `darkgreen`, `green`, `darkviolet`, `violet`
 - Individual color overrides for fine-grained customization
 - Section headings with full-width decorative rule
 - Optional bibliography support via `europasscv2025-bibliography.sty` (powered by `biblatex` and `biber`)
 - Supports pdfLaTeX, XeLaTeX, and LuaLaTeX
-- Support for `English` and `Italian` labels, easily extensible to other languages
+- Translated CV and letter labels in English, German (traditional and reformed orthography), Hungarian, Italian and Romanian
 
 ## Download and installation
 
@@ -69,6 +73,32 @@ Please refer to the [documentation](europasscv2025.pdf) for full instructions. A
 \end{document}
 ```
 
+Cover letters use a separate set of commands:
+
+```latex
+\documentclass[german,color-darkgreen]{europassletter2025}
+\eclname{Katie Smith}
+\ecladdress{12 Strawberry Hill, Dublin 8}
+\eclemail{smith@example.com}
+\eclphone[mobile]{(+353) 555 123 555}
+\eclim[\faWhatsapp]{WhatsApp}{ksmith}
+\eclrecipientname{Selection Committee}
+\eclrecipientorganization{Example Company}
+\ecldate{Dublin, 8 November 2026}
+\eclsubject{Application for Software Engineer}
+\eclopening{Dear Selection Committee,}
+\eclclosing{Yours sincerely,}
+\eclsignature{Katie Smith}
+
+\begin{document}
+\begin{eclletter}
+I am writing to apply for the advertised position.
+\end{eclletter}
+\end{document}
+```
+
+For a complete example, see `europassletter2025_en.tex`.
+
 ## Building from source
 
 The repository comes with a `Makefile` that handles all build steps, including converting logos from SVG to PDF using [Inkscape](https://inkscape.org) and compiling all documents with `latexmk`.
@@ -89,7 +119,7 @@ You need to have **Inkscape** and **latexmk** installed on your system.
 
 Contributions are welcome, in particular:
 
-- **New language files** — add a `locale/ecv_<lang>.def` file following the structure of the existing ones and open a pull request
+- **New language files** — add a `locale/<lang>.def` file following the structure of the existing ones and open a pull request
 - **Bug reports and feature requests** — open an issue on GitHub
 
 ## License

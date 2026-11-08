@@ -1,0 +1,35 @@
+% europasscv2025-common.sty
+% Shared fonts, language setup and color controls for the Europass document classes.
+%
+% This work may be distributed and/or modified under the conditions of
+% the LaTeX Project Public License, either version 1.3 of this license
+% or (at your option) any later version.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{europasscv2025-common}[2026/11/08 Shared Europass CV and letter support]
+
+\RequirePackage{iftex}
+\ifPDFTeX
+  \RequirePackage[T1]{fontenc}
+  \RequirePackage[utf8]{inputenc}
+\fi
+\RequirePackage[default]{opensans}
+
+\RequirePackage{xcolor}
+
+\newcommand{\ecv@setlanguage}[1]{%
+  \RequirePackage[#1]{babel}%
+  \usetikzlibrary{babel}%
+}
+
+\newcommand{\ecvaccentcolor}[1]{\definecolor{ecv@color@accent}{HTML}{#1}}
+\newcommand{\ecvtextcolor}[1]{\definecolor{ecv@color@text}{HTML}{#1}}
+\newcommand{\ecvbordercolor}[1]{\definecolor{ecv@color@border}{HTML}{#1}}
+\newcommand{\ecvtitlecolor}[1]{\definecolor{ecv@color@title}{HTML}{#1}}
+\newcommand{\ecvinfocolor}[1]{\definecolor{ecv@color@info}{HTML}{#1}}
+\newcommand{\ecvinfolinkcolor}[1]{\definecolor{ecv@color@infolink}{HTML}{#1}}
+\newcommand{\ecvsectioncolor}[1]{\definecolor{ecv@color@section}{HTML}{#1}}
+\newcommand{\ecvhighlightcolor}[1]{\definecolor{ecv@color@highlight}{HTML}{#1}}
+\newcommand{\ecvlinkcolor}[1]{\definecolor{ecv@color@link}{HTML}{#1}}
+\newcommand{\ecvtableitemcolor}[1]{\definecolor{ecv@color@tableitem}{HTML}{#1}}
+\newcommand{\ecvtablesepcolor}[1]{\definecolor{ecv@color@tablesep}{HTML}{#1}}

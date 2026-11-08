@@ -1,4 +1,4 @@
-% ecv_english.def
+% english.def
 % English language definition
 %
 % Copyright 2025 Lorenzo Calisti
@@ -15,7 +15,7 @@
 %
 % The Current Maintainer of this work is Lorenzo Calisti.
 %
-\ProvidesFile{ecv_english.def}[2026-05-20 europasscv2025 English language definition]
+\ProvidesFile{english.def}[2026-05-20 europasscv2025 English language definition]
 %
 \def\ecv@label@dob{Date of birth}
 \def\ecv@label@gender{Gender}
@@ -36,3 +36,5 @@
 \def\ecv@label@spokeninteraction{Spoken interaction}
 \def\ecv@label@cefrlevels{Levels: A1 and A2: Basic user - B1 and B2: Independent user - C1 and C2: Proficient user}
 \def\ecv@label@drivinglicence{Driving licence}
+\def\ecv@label@recipient{To}
+\def\ecv@label@subject{Subject}

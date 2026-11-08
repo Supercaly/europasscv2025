@@ -1,4 +1,4 @@
-% ecv_italian.def
+% italian.def
 % Italian language definition
 %
 % Copyright 2025 Lorenzo Calisti
@@ -15,7 +15,7 @@
 %
 % The Current Maintainer of this work is Lorenzo Calisti.
 %
-\ProvidesFile{ecv_italian.def}[2026-05-20 europasscv2025 Italian language definition]
+\ProvidesFile{italian.def}[2026-05-20 europasscv2025 Italian language definition]
 %
 \def\ecv@label@dob{Data di nascita}
 \def\ecv@label@gender{Sesso}
@@ -36,3 +36,5 @@
 \def\ecv@label@spokeninteraction{Interazione orale}
 \def\ecv@label@cefrlevels{Livelli: A1 e A2: Livello elementare B1 e B2: Livello intermedio C1 e C2: Livello avanzato}
 \def\ecv@label@drivinglicence{Patente di guida}
+\def\ecv@label@recipient{A}
+\def\ecv@label@subject{Oggetto}

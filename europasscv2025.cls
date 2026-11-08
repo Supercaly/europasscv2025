@@ -25,7 +25,6 @@
 % ============================================================
 % EARLY PACKAGES (safe before LoadClass)
 % ============================================================
-\RequirePackage{iftex}
 \RequirePackage{etoolbox}
 
 % ============================================================
@@ -48,6 +47,7 @@
 \newcommand{\ecv@lang}{english}% Default to english
 \DeclareOption{english}{\renewcommand{\ecv@lang}{english}}
 \DeclareOption{german}{\renewcommand{\ecv@lang}{german}}
+\DeclareOption{ngerman}{\renewcommand{\ecv@lang}{ngerman}}
 \DeclareOption{hungarian}{\renewcommand{\ecv@lang}{hungarian}}
 \DeclareOption{italian}{\renewcommand{\ecv@lang}{italian}}
 \DeclareOption{romanian}{\renewcommand{\ecv@lang}{romanian}}
@@ -67,11 +67,11 @@
 \ProcessOptions\relax
 
 \LoadClass[a4paper]{article}
+\RequirePackage{europasscv2025-common}
 
 % ============================================================
 % PACKAGES (loaded after LoadClass so dimensions are set)
 % ============================================================
-\RequirePackage{xcolor}
 \RequirePackage{graphicx}
 \RequirePackage{geometry}
 \RequirePackage{fancyhdr}
@@ -90,37 +90,22 @@
 \RequirePackage{xparse}
 \ifecv@debug \RequirePackage{showframe} \fi
 
+% ============================================================
+% LOAD LANGUAGE LABELS AND SET DOCUMENT LANGUAGE
+% ============================================================
+\InputIfFileExists{locale/\ecv@lang.def}{}{%
+    \PackageWarning{europasscv2025}{Language file '\ecv@lang.def' not found, falling back to english}%
+    \renewcommand{\ecv@lang}{english}%
+    \input{locale/english.def}%
+}
+\ecv@setlanguage{\ecv@lang}
+
 % hyperref needs to be the last loaded package
 \RequirePackage{hyperref}
 
 \hypersetup{
   colorlinks=true,
   allcolors=ecv@color@link
-}
-
-% ============================================================
-% FONT SETUP (Engine-aware)
-% ============================================================
-% Detect the TeX engine and set up fonts accordingly
-\ifPDFTeX
-    \RequirePackage[T1]{fontenc}
-    \RequirePackage[utf8]{inputenc}
-    \RequirePackage{helvet}
-    \renewcommand{\familydefault}{\sfdefault}
-\else
-    % XeLaTex and LuaLaTex
-    \RequirePackage{fontspec}
-    \setmainfont{Helvetica}
-    \setsansfont{Helvetica}
-    \renewcommand{\familydefault}{\sfdefault}
-\fi
-
-% ============================================================
-% LOAD LANGUAGE LABELS
-% ============================================================
-\InputIfFileExists{locale/ecv_\ecv@lang.def}{}{%
-    \PackageWarning{europasscv2025}{Language file 'ecv_\ecv@lang.def' not found, falling back to english}%
-    \input{locale/ecv_english.def}%
 }
 
 % ============================================================
@@ -152,19 +137,6 @@
     \PackageWarning{europasscv2025}{Color file 'ecv_\ecv@colorscheme.def' not found, falling back to default}%
     \input{colors/ecv_default.def}%
 }
-
-% Setter for all colors
-\newcommand{\ecvaccentcolor}[1]{\definecolor{ecv@color@accent}{HTML}{#1}}
-\newcommand{\ecvtextcolor}[1]{\definecolor{ecv@color@text}{HTML}{#1}}
-\newcommand{\ecvbordercolor}[1]{\definecolor{ecv@color@border}{HTML}{#1}}
-\newcommand{\ecvtitlecolor}[1]{\definecolor{ecv@color@title}{HTML}{#1}}
-\newcommand{\ecvinfocolor}[1]{\definecolor{ecv@color@info}{HTML}{#1}}
-\newcommand{\ecvinfolinkcolor}[1]{\definecolor{ecv@color@infolink}{HTML}{#1}}
-\newcommand{\ecvsectioncolor}[1]{\definecolor{ecv@color@section}{HTML}{#1}}
-\newcommand{\ecvhighlightcolor}[1]{\definecolor{ecv@color@highlight}{HTML}{#1}}
-\newcommand{\ecvlinkcolor}[1]{\definecolor{ecv@color@link}{HTML}{#1}}
-\newcommand{\ecvtableitemcolor}[1]{\definecolor{ecv@color@tableitem}{HTML}{#1}}
-\newcommand{\ecvtablesepcolor}[1]{\definecolor{ecv@color@tablesep}{HTML}{#1}}
 
 % ============================================================
 % PAGE STYLE (footer with logo + page number)

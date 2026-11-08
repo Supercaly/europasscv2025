@@ -32,9 +32,12 @@ PACKAGE_NAME = europasscv2025
 # Source files
 # ============================================================
 CLASS = europasscv2025.cls
+LETTER_CLASS = europassletter2025.cls
+COMMON_STY = europasscv2025-common.sty
 BIBSTY = europasscv2025-bibliography.sty
 LOCALE_DEF = $(wildcard locale/*.def)
 COLORS_DEF = $(wildcard colors/*.def)
+CLASS_FILES = $(CLASS) $(LETTER_CLASS) $(COMMON_STY)
 
 # ============================================================
 # Targets
@@ -46,7 +49,7 @@ all: class images documentation examples
 # ------------------------------------------------------------
 # class: no build step needed, just a check that files exist
 # ------------------------------------------------------------
-class: $(CLASS) $(BIBSTY) $(LOCALE_DEF) $(COLORS_DEF)
+class: $(CLASS_FILES) $(BIBSTY) $(LOCALE_DEF) $(COLORS_DEF)
 	@echo "Class files ready."
 
 # ------------------------------------------------------------
@@ -63,7 +66,7 @@ photo.png: photo.svg
 # ------------------------------------------------------------
 # pdf file from tex
 # ------------------------------------------------------------
-%.pdf: %.tex $(CLASS)
+%.pdf: %.tex $(CLASS_FILES) $(BIBSTY) $(LOCALE_DEF) $(COLORS_DEF)
 	$(LATEXMK) $(LATEXMK_FLAGS) $<
 # ------------------------------------------------------------
 # documentation
@@ -73,7 +76,7 @@ documentation: class images europasscv2025.pdf
 # ------------------------------------------------------------
 # examples
 # ------------------------------------------------------------
-examples: class images europasscv2025_en.pdf europasscv2025_bib_en.pdf
+examples: class images europasscv2025_en.pdf europasscv2025_bib_en.pdf europassletter2025_en.pdf
 
 # ------------------------------------------------------------
 # package: build a CTAN-ready tarball
@@ -83,6 +86,8 @@ package: all tds
 	$(INSTALLDIR) $(PACKAGE_NAME)/locale
 	$(INSTALLDIR) $(PACKAGE_NAME)/colors
 	$(INSTALL) $(CLASS) $(PACKAGE_NAME)
+	$(INSTALL) $(LETTER_CLASS) $(PACKAGE_NAME)
+	$(INSTALL) $(COMMON_STY) $(PACKAGE_NAME)
 	$(INSTALL) $(BIBSTY) $(PACKAGE_NAME)
 	$(INSTALL) europass_logo.pdf $(PACKAGE_NAME)
 	$(INSTALL) locale/*.def $(PACKAGE_NAME)/locale
@@ -96,6 +101,8 @@ package: all tds
 	$(INSTALL) europasscv2025_en.pdf $(PACKAGE_NAME)
 	$(INSTALL) europasscv2025_bib_en.tex $(PACKAGE_NAME)
 	$(INSTALL) europasscv2025_bib_en.pdf $(PACKAGE_NAME)
+	$(INSTALL) europassletter2025_en.tex $(PACKAGE_NAME)
+	$(INSTALL) europassletter2025_en.pdf $(PACKAGE_NAME)
 	$(INSTALL) europasscv2025_example.bib $(PACKAGE_NAME)
 	$(INSTALL) photo.png $(PACKAGE_NAME)
 	$(INSTALL) Makefile $(PACKAGE_NAME)/Makefile.$(PACKAGE_NAME)
@@ -112,6 +119,8 @@ tds: all
 	$(INSTALLDIR) tds/tex/latex/$(PACKAGE_NAME)/locale
 	$(INSTALLDIR) tds/tex/latex/$(PACKAGE_NAME)/colors
 	$(INSTALL) $(CLASS) tds/tex/latex/$(PACKAGE_NAME)
+	$(INSTALL) $(LETTER_CLASS) tds/tex/latex/$(PACKAGE_NAME)
+	$(INSTALL) $(COMMON_STY) tds/tex/latex/$(PACKAGE_NAME)
 	$(INSTALL) $(BIBSTY) tds/tex/latex/$(PACKAGE_NAME)
 	$(INSTALL) europass_logo.pdf tds/tex/latex/$(PACKAGE_NAME)
 	$(INSTALL) locale/*.def tds/tex/latex/$(PACKAGE_NAME)/locale
@@ -127,6 +136,8 @@ tds: all
 	$(INSTALL) europasscv2025_en.pdf tds/doc/latex/$(PACKAGE_NAME)/example
 	$(INSTALL) europasscv2025_bib_en.tex tds/doc/latex/$(PACKAGE_NAME)/example
 	$(INSTALL) europasscv2025_bib_en.pdf tds/doc/latex/$(PACKAGE_NAME)/example
+	$(INSTALL) europassletter2025_en.tex tds/doc/latex/$(PACKAGE_NAME)/example
+	$(INSTALL) europassletter2025_en.pdf tds/doc/latex/$(PACKAGE_NAME)/example
 	$(INSTALL) europasscv2025_example.bib tds/doc/latex/$(PACKAGE_NAME)/example
 	$(INSTALL) photo.png tds/doc/latex/$(PACKAGE_NAME)/example
 	cd tds && zip -r $(PACKAGE_NAME).tds.zip * && mv $(PACKAGE_NAME).tds.zip ..

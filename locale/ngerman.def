@@ -1,5 +1,5 @@
-% ecv_german.def
-% German language definition
+% ngerman.def
+% German language definition (post-1996 orthography)
 %
 % Copyright 2025 Christian Gruber
 %
@@ -15,7 +15,7 @@
 %
 % The Current Maintainer of this work is Christian Gruber.
 %
-\ProvidesFile{ecv_german.def}[2026-07-14 europasscv2025 German language definition]
+\ProvidesFile{ngerman.def}[2026-11-08 europasscv2025 Reformed German language definition]
 %
 \def\ecv@label@dob{Geburtsdatum}
 \def\ecv@label@gender{Geschlecht}
@@ -36,3 +36,5 @@
 \def\ecv@label@spokeninteraction{An Gesprächen teilnehmen}
 \def\ecv@label@cefrlevels{Niveau: A1 und A2: Elementare Sprachanwendung - B1 und B2: Selbstständige Sprachanwendung - C1 und C2: Kompetente Sprachanwendung}
 \def\ecv@label@drivinglicence{Führerschein}
+\def\ecv@label@recipient{An}
+\def\ecv@label@subject{Betreff}
