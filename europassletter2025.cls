@@ -13,6 +13,7 @@
 
 \DeclareOption{english}{\renewcommand{\ecl@language}{english}}
 \DeclareOption{german}{\renewcommand{\ecl@language}{german}}
+\DeclareOption{ngerman}{\renewcommand{\ecl@language}{ngerman}}
 \DeclareOption{hungarian}{\renewcommand{\ecl@language}{hungarian}}
 \DeclareOption{italian}{\renewcommand{\ecl@language}{italian}}
 \DeclareOption{romanian}{\renewcommand{\ecl@language}{romanian}}
@@ -34,7 +35,6 @@
 \RequirePackage{tikz}
 \RequirePackage{xparse}
 \RequirePackage{fontawesome5}
-\RequirePackage[hidelinks]{hyperref}
 
 \geometry{
   a4paper,
@@ -49,10 +49,13 @@
   \ClassWarning{europassletter2025}{Color scheme `\ecl@colorscheme' not found; using default}%
   \input{colors/ecv_default.def}%
 }
-\InputIfFileExists{locale/ecv_\ecl@language.def}{}{%
-  \ClassWarning{europassletter2025}{Language file `\ecl@language' not found; using English}%
-  \input{locale/ecv_english.def}%
+\InputIfFileExists{locale/\ecl@language.def}{}{%
+  \ClassWarning{europassletter2025}{Language file `\ecl@language.def' not found; using English}%
+  \renewcommand{\ecl@language}{english}%
+  \input{locale/english.def}%
 }
+\ecv@setlanguage{\ecl@language}
+\RequirePackage[hidelinks]{hyperref}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}

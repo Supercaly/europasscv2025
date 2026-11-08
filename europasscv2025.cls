@@ -47,6 +47,7 @@
 \newcommand{\ecv@lang}{english}% Default to english
 \DeclareOption{english}{\renewcommand{\ecv@lang}{english}}
 \DeclareOption{german}{\renewcommand{\ecv@lang}{german}}
+\DeclareOption{ngerman}{\renewcommand{\ecv@lang}{ngerman}}
 \DeclareOption{hungarian}{\renewcommand{\ecv@lang}{hungarian}}
 \DeclareOption{italian}{\renewcommand{\ecv@lang}{italian}}
 \DeclareOption{romanian}{\renewcommand{\ecv@lang}{romanian}}
@@ -89,20 +90,22 @@
 \RequirePackage{xparse}
 \ifecv@debug \RequirePackage{showframe} \fi
 
+% ============================================================
+% LOAD LANGUAGE LABELS AND SET DOCUMENT LANGUAGE
+% ============================================================
+\InputIfFileExists{locale/\ecv@lang.def}{}{%
+    \PackageWarning{europasscv2025}{Language file '\ecv@lang.def' not found, falling back to english}%
+    \renewcommand{\ecv@lang}{english}%
+    \input{locale/english.def}%
+}
+\ecv@setlanguage{\ecv@lang}
+
 % hyperref needs to be the last loaded package
 \RequirePackage{hyperref}
 
 \hypersetup{
   colorlinks=true,
   allcolors=ecv@color@link
-}
-
-% ============================================================
-% LOAD LANGUAGE LABELS
-% ============================================================
-\InputIfFileExists{locale/ecv_\ecv@lang.def}{}{%
-    \PackageWarning{europasscv2025}{Language file 'ecv_\ecv@lang.def' not found, falling back to english}%
-    \input{locale/ecv_english.def}%
 }
 
 % ============================================================

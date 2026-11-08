@@ -1,0 +1,40 @@
+% german.def
+% German language definition (pre-1996 orthography)
+%
+% Copyright 2025 Christian Gruber
+%
+% This work may be distributed and/or modified under the conditions of
+% the LaTeX Project Public License, either version 1.3 of this license
+% or (at your option) any later version.
+% The latest version of this license is in
+%   https://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2008 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Christian Gruber.
+%
+\ProvidesFile{german.def}[2026-11-08 europasscv2025 Traditional German language definition]
+%
+\def\ecv@label@dob{Geburtsdatum}
+\def\ecv@label@gender{Geschlecht}
+\def\ecv@label@nationality{Staatsbürgerschaft}
+\def\ecv@label@phone{Telefon}
+\def\ecv@label@email{Email}
+\def\ecv@label@website{Webauftritt}
+\def\ecv@label@address{Adresse}
+\def\ecv@label@home{Privat}
+\def\ecv@label@mobile{Mobiltelefon}
+\def\ecv@label@mothertongue{Muttersprache(n)}
+\def\ecv@label@understanding{Verstehen}
+\def\ecv@label@speaking{Sprechen}
+\def\ecv@label@writing{Schreiben}
+\def\ecv@label@listening{Hören}
+\def\ecv@label@reading{Lesen}
+\def\ecv@label@spokenproduction{Zusammenhängend Sprechen}
+\def\ecv@label@spokeninteraction{An Gesprächen teilnehmen}
+\def\ecv@label@cefrlevels{Niveau: A1 und A2: Elementare Sprachanwendung - B1 und B2: Selbständige Sprachanwendung - C1 und C2: Kompetente Sprachanwendung}
+\def\ecv@label@drivinglicence{Führerschein}
+\def\ecv@label@recipient{An}
+\def\ecv@label@subject{Betreff}

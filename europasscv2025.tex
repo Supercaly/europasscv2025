@@ -326,14 +326,17 @@ Options are passed to the class in the usual \LaTeX\ way:
 
 \subsubsection{Language options}
 
-The language option affects only the labels appearing in the CV
+The language option sets the document language and the labels appearing in the CV
 (e.g.\ ``Date of birth'', ``Phone'', column headers in the language
-table). It does not affect hyphenation; use \pkg{babel} or
-\pkg{polyglossia} for that.
+table).
 
 \begin{description}
-    \item[\opt{english}] English labels (default).
-    \item[\opt{italian}] Italian labels.
+    \item[\opt{english}] English (default).
+    \item[\opt{german}] German with traditional (pre-1996) orthography.
+    \item[\opt{ngerman}] German with reformed (post-1996) orthography.
+    \item[\opt{hungarian}] Hungarian.
+    \item[\opt{italian}] Italian.
+    \item[\opt{romanian}] Romanian.
 \end{description}
 
 \subsubsection{Color scheme options}
@@ -590,7 +593,7 @@ Use \cmd{ecvpublications} if you want continuous numbering.
 \label{sec:locale}
 % ------------------------------------------------------------
 
-To add a new language, create \texttt{locale/ecv\_<lang>.def} and
+To add a new language, create \texttt{locale/<lang>.def} and
 add the corresponding \cmd{DeclareOption} in \texttt{europasscv2025.cls}:
 
 \begin{verbatim}
@@ -598,7 +601,7 @@ add the corresponding \cmd{DeclareOption} in \texttt{europasscv2025.cls}:
 \end{verbatim}
 
 The \texttt{.def} file must define all label commands. Use the existing
-\texttt{locale/ecv\_english.def} as a template. Contributions of new
+\texttt{locale/english.def} as a template. Contributions of new
 language files are welcome.
 
 % ============================================================

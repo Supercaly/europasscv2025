@@ -1,4 +1,4 @@
-% ecv_italian.def
+% italian.def
 % Italian language definition
 %
 % Copyright 2025 Lorenzo Calisti
@@ -15,7 +15,7 @@
 %
 % The Current Maintainer of this work is Lorenzo Calisti.
 %
-\ProvidesFile{ecv_italian.def}[2026-05-20 europasscv2025 Italian language definition]
+\ProvidesFile{italian.def}[2026-05-20 europasscv2025 Italian language definition]
 %
 \def\ecv@label@dob{Data di nascita}
 \def\ecv@label@gender{Sesso}

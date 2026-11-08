@@ -42,7 +42,7 @@ package also includes a matching cover-letter class. Features include:
 - Section headings with full-width decorative rule
 - Optional bibliography support via `europasscv2025-bibliography.sty` (powered by `biblatex` and `biber`)
 - Supports pdfLaTeX, XeLaTeX, and LuaLaTeX
-- Translated CV and letter labels in English, German, Hungarian, Italian and Romanian
+- Translated CV and letter labels in English, German (traditional and reformed orthography), Hungarian, Italian and Romanian
 
 ## Download and installation
 
@@ -119,7 +119,7 @@ You need to have **Inkscape** and **latexmk** installed on your system.
 
 Contributions are welcome, in particular:
 
-- **New language files** — add a `locale/ecv_<lang>.def` file following the structure of the existing ones and open a pull request
+- **New language files** — add a `locale/<lang>.def` file following the structure of the existing ones and open a pull request
 - **Bug reports and feature requests** — open an issue on GitHub
 
 ## License

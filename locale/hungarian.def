@@ -12,7 +12,7 @@
 %
 % The Current Maintainer of this work is Tibor Tómács.
 %
-\ProvidesFile{ecv_hungarian.def}[2026-08-13 europasscv2025 Hungarian language definition]
+\ProvidesFile{hungarian.def}[2026-08-13 europasscv2025 Hungarian language definition]
 %
 \def\ecv@label@dob{Születési dátum}
 \def\ecv@label@gender{Nem}
