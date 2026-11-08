@@ -27,3 +27,5 @@
 \def\ecv@label@spokeninteraction{Conversație}
 \def\ecv@label@cefrlevels{Niveluri: A1 și A2: Utilizator de bază - B1 și B2: Utilizator independent - C1 și C2: Utilizator experimentat}
 \def\ecv@label@drivinglicence{Permis de conducere}
+\def\ecv@label@recipient{Către}
+\def\ecv@label@subject{Subiect}
